@@ -56,10 +56,10 @@ public class UpdateCustomer extends JFrame implements ActionListener
         t3.setBounds(150,130,200,25);
         add(t3);
 
-        JLabel l5 = new JLabel("Gander");
+        JLabel l5 = new JLabel("Gender");
         l5.setBounds(30,160,100,25);
         add(l5);
-        
+
         t9 = new JTextField();
         t9.setBounds(150,160,200,25);
         add(t9);
@@ -132,8 +132,7 @@ public class UpdateCustomer extends JFrame implements ActionListener
 
         try{
             Conn c = new Conn();
-//            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
-            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
+            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
             while(rs.next()){
                 t1.setText(rs.getString("username"));
                 t2.setText(rs.getString("number"));
@@ -157,22 +156,16 @@ public class UpdateCustomer extends JFrame implements ActionListener
         if(e.getSource() == b1)
         {
             String username = t1.getText();
-            String id = (String) c1.getSelectedItem();
+            String id = t8.getText();
             String number = t2.getText();
-            String name = t3.getName();
-            String radio = null;
-            if(r1.isSelected())
-            {
-                radio = "Male";
-            }else if (r2.isSelected()){
-                radio = "Female";
-            }
+            String name = t3.getText();
+            String radio = t9.getText();
             String country = t4.getText();
             String address = t5.getText();
             String phone = t6.getText();
             String email = t7.getText();
 
-            String q = "insert into customer values('"+username+"','"+id+"','"+number+"','"+name+"','"+radio+"','"+country+"','"+address+"','"+phone+"','"+email+"')";
+            String q = "update customer set username='"+username+"',id='"+id+"',number='"+number+"',name='"+name+"',gender='"+radio+"',country='"+country+"',address='"+address+"',phone='"+phone+"',email='"+email+"'";
 
             try{
                 Conn c = new Conn();

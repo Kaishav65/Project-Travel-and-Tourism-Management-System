@@ -51,7 +51,7 @@ public class AddCustomer extends JFrame implements ActionListener
         t3.setBounds(150,120,200,25);
         add(t3);
 
-        JLabel l5 = new JLabel("Gander");
+        JLabel l5 = new JLabel("Gender");
         l5.setBounds(30,150,100,25);
         add(l5);
 
@@ -152,7 +152,7 @@ public class AddCustomer extends JFrame implements ActionListener
             String username = t1.getText();
             String id = (String) c1.getSelectedItem();
             String number = t2.getText();
-            String name = t3.getName();
+            String name = t3.getText();
             String radio = null;
             if(r1.isSelected())
             {
