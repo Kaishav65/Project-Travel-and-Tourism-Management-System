@@ -59,9 +59,7 @@ public class UpdateCustomer extends JFrame implements ActionListener
         JLabel l5 = new JLabel("Gander");
         l5.setBounds(30,160,100,25);
         add(l5);
-
         
-
         t9 = new JTextField();
         t9.setBounds(150,160,200,25);
         add(t9);
