@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame implements ActionListener
 {
-    JButton b1,b2, b13,b14;
+    JButton b1,b2,b3, b13,b14;
     String username;
 //    constructor
     Dashboard(String username){
@@ -62,12 +62,13 @@ public class Dashboard extends JFrame implements ActionListener
         b2.addActionListener(this);
         p2.add(b2);
 
-        JButton b3 = new JButton("View Details");
+        b3 = new JButton("View Details");
         b3.setBackground(new Color(0,0,102));
         b3.setFont(new Font("Railway",Font.PLAIN,15));
         b3.setForeground(Color.WHITE);
         b3.setMargin(new Insets(0,0,0,120));
         b3.setBounds(0,80,250,40);
+        b3.addActionListener(this);
         p2.add(b3);
 
         JButton b4 = new JButton("Delete Personal Details");
@@ -169,14 +170,7 @@ public class Dashboard extends JFrame implements ActionListener
         l4.setForeground(Color.WHITE);
         l4.setFont(new Font("Tahuma",Font.PLAIN,38));
         l1.add(l4);
-
-
-
     }
-
-
-
-
     public static void main(String[] args) {
         new Dashboard("").setVisible(true);
     }
@@ -200,6 +194,8 @@ public class Dashboard extends JFrame implements ActionListener
         }else if(e.getSource() == b1){
             new AddCustomer(username).setVisible(true);
         }else if(e.getSource() == b2){
-            new UpdateCustomer(username).setVisible(true);}
+            new UpdateCustomer(username).setVisible(true);
+        }else if(e.getSource() == b3){
+            new ViewCustomer(username).setVisible(true);}
     }
 }
