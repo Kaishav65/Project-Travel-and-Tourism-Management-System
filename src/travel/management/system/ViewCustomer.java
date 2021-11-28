@@ -70,7 +70,7 @@ public class ViewCustomer extends JFrame implements ActionListener
         l7.setBounds(370,70,100,25);
         add(l7);
 
-        JLabel l17 = new JLabel("Address :");
+        JLabel l17 = new JLabel();
         l17.setBounds(500,70,100,25);
         add(l17);
 
@@ -86,7 +86,7 @@ public class ViewCustomer extends JFrame implements ActionListener
         l9.setBounds(370,140,100,25);
         add(l9);
 
-        JLabel l19 = new JLabel("Email :");
+        JLabel l19 = new JLabel();
         l19.setBounds(500,140,100,25);
         add(l19);
 

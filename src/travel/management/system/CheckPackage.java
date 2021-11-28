@@ -11,17 +11,19 @@ public class CheckPackage extends JFrame
 
         String[] package1 = new String[]{"GOLD PACKAGE","6 Days and 7 Nights","Airport Assistance","Half Day City Tour","Daily Buffet","Welcome Drinks on Arrival","Full Days 3 Island Cruise","English Speaking Guide","BOOK NOW","Summer Holiday","Price Rs 12000/-","package1.jpg"};
         String[] package2 = new String[]{"SILVER PACKAGE","5 DAYS AND 6 NIGHTS","Toll Free and Entrance Free Tickets","Meet and Greet at Airport","Night safari","Full 3 days Cruise","Cruise with Dinner","English Speaking Guide","BOOK NOW","WINTER SPECIAL","Price Rs 24000/-","package2.jpg"};
+        String[] package3 = new String[]{"BRONZE PACKAGE","6 DAYS AND 5 NIGHTS","Free Clubbing","Horse Riding & Othrr Games","Welcome Drink on Arrival","Daily Buffet","Stay in 5 star Hotel","BBQ Dinner","BOOK NOW","WINTER SPECIAL","Price Rs 32000/-","package3.jpg"};
 
         JTabbedPane pane = new JTabbedPane();
         JPanel p1 = createPanel(package1);
         pane.addTab("Package 1",null,p1);
         JPanel p2 = createPanel(package2);
         pane.addTab("Package 2",null,p2);
-        pane.addTab("Package 3",null,new JPanel());
+        JPanel p3 = createPanel(package3);
+        pane.addTab("Package 3",null,p3);
         add(pane, BorderLayout.CENTER);
     }
 
-    // create plane for first tab
+    // create plane
     public JPanel createPanel(String [] pack){
         JPanel p1 = new JPanel();p1.setLayout(null);
         p1.setBackground(Color.WHITE);
@@ -96,7 +98,7 @@ public class CheckPackage extends JFrame
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l12 = new JLabel(i3);
         l12.setBounds(300,30,350,250);
-        add(l12);
+        p1.add(l12);
 
 
         return p1;
