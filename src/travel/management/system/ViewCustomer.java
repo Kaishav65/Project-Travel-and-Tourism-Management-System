@@ -107,8 +107,8 @@ public class ViewCustomer extends JFrame implements ActionListener
 
         try{
             Conn c = new Conn();
-//            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
-            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
+            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
+//            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
             while(rs.next()){
                 l11.setText(rs.getString("username"));
                 l12.setText(rs.getString("id"));

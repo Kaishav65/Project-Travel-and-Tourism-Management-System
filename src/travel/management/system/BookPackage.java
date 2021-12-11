@@ -14,7 +14,7 @@ public class BookPackage extends JFrame implements ActionListener
     JButton b1,b2,b3;
 
     // constructor
-    BookPackage (){
+    BookPackage (String username){
         setBounds(300,200,800,400);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -105,7 +105,8 @@ public class BookPackage extends JFrame implements ActionListener
         // DataBase
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
+            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
+//            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
             while(rs.next()){
                 l11.setText(rs.getString("username"));
                 l12.setText(rs.getString("id"));
@@ -141,7 +142,7 @@ public class BookPackage extends JFrame implements ActionListener
     }
 
     public static void main(String[] args) {
-        new BookPackage().setVisible(true);
+        new BookPackage("").setVisible(true);
 
     }
 

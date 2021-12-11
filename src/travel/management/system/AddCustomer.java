@@ -134,6 +134,7 @@ public class AddCustomer extends JFrame implements ActionListener
         try{
             Conn c = new Conn();
             ResultSet rs = c.s.executeQuery("select * from account where username = '"+username+"'");
+//            ResultSet rs = c.s.executeQuery("select * from customer where username = 'kesj__7'");
             while(rs.next()){
                 t1.setText(rs.getString("username"));
                 t3.setText(rs.getString("name"));
