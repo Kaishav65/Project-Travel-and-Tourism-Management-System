@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame implements ActionListener
 {
-    JButton b1,b2,b3,b5,b6,b7, b13,b14;
+    JButton b1,b2,b3,b5,b6,b7,b8,b11, b13,b14;
     String username;
 //    constructor
     Dashboard(String username){
@@ -106,12 +106,13 @@ public class Dashboard extends JFrame implements ActionListener
         b7.addActionListener(this);
         p2.add(b7);
 
-        JButton b8 = new JButton("View Hotels");
+        b8 = new JButton("View Hotels");
         b8.setBackground(new Color(0,0,102));
         b8.setFont(new Font("Railway",Font.PLAIN,15));
         b8.setForeground(Color.WHITE);
         b8.setBounds(0,280,250,40);
         b8.setMargin(new Insets(0,0,0,120));
+        b8.addActionListener(this);
         p2.add(b8);
 
         JButton b9 = new JButton("Book Hotel");
@@ -130,12 +131,13 @@ public class Dashboard extends JFrame implements ActionListener
         b10.setMargin(new Insets(0,0,0,85));
         p2.add(b10);
 
-        JButton b11 = new JButton("Destination");
+        b11 = new JButton("Destination");
         b11.setBackground(new Color(0,0,102));
         b11.setFont(new Font("Railway",Font.PLAIN,15));
         b11.setForeground(Color.WHITE);
         b11.setBounds(0,400,250,40);
         b11.setMargin(new Insets(0,0,0,115));
+        b11.addActionListener(this);
         p2.add(b11);
 
         JButton b12 = new JButton("Payment");
@@ -217,6 +219,10 @@ public class Dashboard extends JFrame implements ActionListener
             new BookPackage(username).setVisible(true);
         }else if(e.getSource() == b7){
             new ViewPackage(username).setVisible(true);
+        }else if(e.getSource() == b8) {
+            new CheckHotels().setVisible(true);
+        }else if(e.getSource() == b11) {
+            new Destination().setVisible(true);
         }
     }
 }
