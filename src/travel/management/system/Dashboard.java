@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame implements ActionListener
 {
-    JButton b1,b2,b3,b5,b6,b7,b8,b11, b13,b14;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15;
     String username;
 //    constructor
     Dashboard(String username){
@@ -115,15 +115,16 @@ public class Dashboard extends JFrame implements ActionListener
         b8.addActionListener(this);
         p2.add(b8);
 
-        JButton b9 = new JButton("Book Hotel");
+        b9 = new JButton("Book Hotel");
         b9.setBackground(new Color(0,0,102));
         b9.setFont(new Font("Railway",Font.PLAIN,15));
         b9.setForeground(Color.WHITE);
         b9.setBounds(0,320,250,40);
         b9.setMargin(new Insets(0,0,0,120));
+        b9.addActionListener(this);
         p2.add(b9);
 
-        JButton b10 = new JButton("View Book Hotel");
+        b10 = new JButton("View Book Hotel");
         b10.setBackground(new Color(0,0,102));
         b10.setFont(new Font("Railway",Font.PLAIN,15));
         b10.setForeground(Color.WHITE);
@@ -140,12 +141,13 @@ public class Dashboard extends JFrame implements ActionListener
         b11.addActionListener(this);
         p2.add(b11);
 
-        JButton b12 = new JButton("Payment");
+        b12 = new JButton("Payment");
         b12.setBackground(new Color(0,0,102));
         b12.setFont(new Font("Railway",Font.PLAIN,15));
         b12.setForeground(Color.WHITE);
         b12.setBounds(0,440,250,40);
         b12.setMargin(new Insets(0,0,0,125));
+        b12.addActionListener(this);
         p2.add(b12);
 
         b13 = new JButton("Calculator");
@@ -155,6 +157,7 @@ public class Dashboard extends JFrame implements ActionListener
         b13.setBounds(0,480,250,40);
         b13.addActionListener(this);
         b13.setMargin(new Insets(0,0,0,120));
+        b13.addActionListener(this);
         p2.add(b13);
 
         b14 = new JButton("Notepad");
@@ -164,14 +167,16 @@ public class Dashboard extends JFrame implements ActionListener
         b14.setBounds(0,520,250,40);
         b14.addActionListener(this);
         b14.setMargin(new Insets(0,0,0,130));
+        b14.addActionListener(this);
         p2.add(b14);
 
-        JButton b15 = new JButton("About");
+        b15 = new JButton("About");
         b15.setBackground(new Color(0,0,102));
         b15.setFont(new Font("Railway",Font.PLAIN,15));
         b15.setForeground(Color.WHITE);
         b15.setBounds(0,560,250,40);
         b15.setMargin(new Insets(0,0,0,140));
+        b15.addActionListener(this);
         p2.add(b15);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/home.jpg"));
@@ -223,6 +228,16 @@ public class Dashboard extends JFrame implements ActionListener
             new CheckHotels().setVisible(true);
         }else if(e.getSource() == b11) {
             new Destination().setVisible(true);
+        }else if(e.getSource() == b9) {
+            new BookHotel(username).setVisible(true);
+        }else if(e.getSource() == b10) {
+            new ViewBookedHotel(username).setVisible(true);
+        }else if(e.getSource() == b15) {
+            new About().setVisible(true);
+        } else if(e.getSource() == b4){
+            new DeleteCustomer(username).setVisible(true);
+        }else if(e.getSource() == b12){
+            new Payment().setVisible(true);
         }
     }
 }
